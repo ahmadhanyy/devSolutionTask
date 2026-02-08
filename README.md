@@ -8,7 +8,9 @@ It was generated using [Angular CLI](https://github.com/angular/angular-cli) ver
 
 To start a live server, run this link:
 
+```bash
 https://ahmadhanyy.github.io/devSolutionTask/
+```
 
 To start a local development server, run:
 
