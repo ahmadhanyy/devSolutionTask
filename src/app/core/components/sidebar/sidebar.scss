@@ -1,0 +1,123 @@
+.sidebar {
+  background: #ffffff;
+  padding: 25px;
+  width: 260px;
+  height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 24px;
+
+  .logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  span {
+    font-size: 17px;
+    font-weight: 600;
+
+    &:last-child {
+      color: #0561FC;
+    }
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 5px;
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  span {
+    padding: 10px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #AEB9BE;
+  }
+
+  &.active, &:hover {
+    background: #EDF4FF;
+    i, span {
+      color: #0561FC;
+    }
+  }
+}
+
+  .fa-solid {
+    display: flex;
+    align-items: center;
+    width: 23px;
+    height: 23px;
+    color: #AEB9BE;
+  }
+}
+
+hr {
+  margin: 16px 0;
+  border: none;
+  height: 1px;
+  background-color: #E3E8EB;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #E9F0F3;
+  padding: 7px;
+
+  &:hover {
+    background: #e0e5ec;
+    cursor: pointer;
+  }
+
+  .company-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .company-details {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+
+    p {
+      margin: 2px;
+    }
+
+    .company-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: #000;
+    }
+
+    .company-text {
+      font-size: 12px;
+      font-weight: 400;
+      color: #AEB9BE;
+    }
+  }
+
+  .fa-chevron-right{
+    position: relative;
+    left: 80px;
+    color: #AEB9BE;
+    font-size: 10px;
+    font-weight: 800;
+  }
+}

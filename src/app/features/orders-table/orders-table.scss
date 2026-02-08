@@ -1,0 +1,76 @@
+.orders-table {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 17px;
+  margin-top: 20px;
+  width: 100%;
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #F7F9FA;
+    color: #A6A9AA;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  td {
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .date-entity {
+    color: #A7AEB1;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .name-entity {
+    display: flex;
+    align-items: center;
+  }
+
+  tr:hover {
+    background-color: #F7F9FA;
+  }
+}
+
+.order-name {
+  align-items: center;
+}
+
+.status {
+  font-size: 10px;
+  font-weight: bold;
+  padding: 4px 20px;
+  border-radius: 5px;
+}
+
+.green-status {
+  color: #78C278;
+  background-color: #E6FDE6;
+}
+
+.red-status {
+  color: #F44336;
+  background-color: #FDE6E6;
+}
+
+.yellow-status {
+  color: #FAA86D;
+  background-color: #FFF4DF;
+}
+
+.blue-status {
+  color: #0561FC;
+  background-color: #DFF0FF;
+}

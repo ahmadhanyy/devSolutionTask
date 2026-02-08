@@ -1,0 +1,15 @@
+<div class="card">
+  <img class="card-icon" [src]="data.icon" alt="Card icon">
+  <div class="card-body">
+    <p class="card-title">{{ data.title }}</p>
+    <div class="card-details">
+      <p class="card-value">{{ data.value }}</p>
+      @if (data.trend && data.trend > 0) {
+        <span class="card-trends positive">+{{ data.trend }}%</span>
+      }
+      @else if (data.trend && data.trend <= 0) {
+        <span class="card-trends negative">{{ data.trend }}%</span>
+      }
+    </div>
+  </div>
+</div>

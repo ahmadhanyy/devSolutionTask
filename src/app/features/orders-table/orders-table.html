@@ -1,0 +1,35 @@
+<div class="orders-table">
+  <table>
+    <thead>
+      <tr>
+        <th>Item Name</th>
+        <th>Qty</th>
+        <th>Order Date</th>
+        <th>Amount</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (order of orders; track $index) {
+        <tr>
+          <td class="name-entity"><img src="{{ order.imgUrl }}" alt="{{ order.name }}" /><span class="order-name">{{ order.name }}</span></td>
+          <td>{{ order.quantity }}</td>
+          <td class="date-entity">{{ order.orderDate | date }}</td>
+          <td>{{ order.amount | currency: 'USD' }}</td>
+          @if (order.status === orderStatus.Approved || order.status === orderStatus.Delivered) {
+            <td><span class="status green-status">{{ order.status }}</span></td>
+          }
+          @else if (order.status === orderStatus.InProcess) {
+            <td><span class="status yellow-status">{{ order.status }}</span></td>
+          }
+          @else if (order.status === orderStatus.Pending) {
+            <td><span class="status blue-status">{{ order.status }}</span></td>
+          }
+          @else {
+            <td><span class="status red-status">{{ order.status }}</span></td>
+          }
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

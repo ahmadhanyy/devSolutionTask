@@ -1,0 +1,27 @@
+<div class="dashboard">
+  <section>
+    <p class="section-title">Analytics</p>
+    <div class="analytics">
+      @for (data of analytics; track $index) {
+        <app-analytics-card [data]="data"></app-analytics-card>
+      }
+    </div>
+  </section>
+
+  <section class="charts">
+    <div class="graph-card line">
+      <app-line-chart />
+    </div>
+    <div class="graph-card bar">
+      <app-bar-chart />
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <p class="section-title">Recent Orders</p>
+      <span class="orders-page">Go to Orders Page <i class="fa-solid fa-arrow-right-long"></i></span>
+    </div>
+    <app-orders-table />
+  </section>
+</div>
