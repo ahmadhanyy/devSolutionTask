@@ -3,10 +3,10 @@
 This project is a **responsive dashboard application** built with **Angular v20**, showcasing modern Angular features and best practices.
 
 It leverages:
-- **Standalone components**
-- **Zoneless change detection**
-- **NgRX** for state management and API handling
-- **Feature-first architecture** for clean and scalable project structure
+- **Standalone components**.
+- **Zoneless change detection**.
+- **NgRX** for state management and API handling.
+- **Feature-first architecture** for clean and scalable project structure.
 
 The project was generated using [Angular CLI](https://github.com/angular/angular-cli) **v20.3.1**.
 
@@ -40,7 +40,7 @@ To run the project locally:
 ```bash
 git clone https://github.com/ahmadhanyy/devSolutionTask.git
 ```
-3. Navigate to the project directory:
+2. Navigate to the project directory:
 
 ```bash
 cd devSolutionTask
