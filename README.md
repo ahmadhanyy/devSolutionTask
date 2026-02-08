@@ -1,10 +1,12 @@
 # DevSolutionTask
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.1.
+This project is a simple responsive dashboard page made with Angular v20 with modern ipdates like zoneless and standalone components. I used NgRX to handle api calls. The project files was organized as feature first approach.
+
+It was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.1.
 
 ## Development server
 
-To start a local development server, run this link:
+To start a live server, run this link:
 
 https://ahmadhanyy.github.io/devSolutionTask/
 
