@@ -23,11 +23,11 @@ https://ahmadhanyy.github.io/devSolutionTask/
 ## Tech Stack & Highlights
 
 - Angular 20
-- NgRX for predictable state management
-- Zoneless Angular for improved performance
-- Standalone Components (no NgModules)
-- Responsive UI
-- Feature-first folder structure
+- NgRX for state management.
+- Zoneless Angular for improved performance.
+- Standalone Components.
+- Responsive UI.
+- Feature-first folder structure.
 
 ---
 
@@ -36,10 +36,11 @@ https://ahmadhanyy.github.io/devSolutionTask/
 To run the project locally:
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/ahmadhanyy/devSolutionTask.git
    ```
-2. Navigate to the project directory:
+3. Navigate to the project directory:
 
 ```bash
 cd devSolutionTask
