@@ -1,0 +1,2 @@
+export default `body{font-family:"Renner*",sans-serif;margin:0;padding:0;box-sizing:border-box}*{box-sizing:inherit}
+`;
