@@ -12,15 +12,15 @@ The project was generated using [Angular CLI](https://github.com/angular/angular
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
 You can view the deployed version here:
 
-🔗 https://ahmadhanyy.github.io/devSolutionTask/
+https://ahmadhanyy.github.io/devSolutionTask/
 
 ---
 
-## 🛠️ Tech Stack & Highlights
+## Tech Stack & Highlights
 
 - Angular 20
 - NgRX for predictable state management
@@ -31,7 +31,7 @@ You can view the deployed version here:
 
 ---
 
-## 📦 Installation & Development Server
+## Installation & Development Server
 
 To run the project locally:
 
@@ -39,19 +39,19 @@ To run the project locally:
    ```bash
    git clone https://github.com/ahmadhanyy/devSolutionTask.git
    ```
-   2.	Navigate to the project directory:
+2. Navigate to the project directory:
 
 ```bash
 cd devSolutionTask
 ```
 
-   3.	Install dependencies:
+3. Install dependencies:
 
 ```bash
 npm install
 ```
 
-   4.	Start the development server:
+4. Start the development server:
 
 ```bash
 ng serve
@@ -65,11 +65,11 @@ The application will automatically reload whenever you modify any of the source 
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 The project follows a feature-first architecture, which helps in:
-	•	Better scalability
-	•	Easier maintenance
-	•	Clear separation of concerns
+- Better scalability.
+- Easier maintenance.
+- Clear separation of concerns.
 
 Each feature contains its own components, state management, services, and related files.
