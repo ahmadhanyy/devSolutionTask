@@ -37,9 +37,9 @@ To run the project locally:
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/ahmadhanyy/devSolutionTask.git
-   ```
+```bash
+git clone https://github.com/ahmadhanyy/devSolutionTask.git
+```
 3. Navigate to the project directory:
 
 ```bash
