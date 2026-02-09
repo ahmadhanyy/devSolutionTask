@@ -1,6 +1,6 @@
 
 export default {
-  basePath: 'C:/Program Files/Git/devSolutionTask',
+  basePath: '/',
   supportedLocales: {
   "en-US": ""
 },

@@ -1,6 +1,6 @@
 {
   "routes": {
-    "/Program%20Files/Git/devSolutionTask": {},
-    "/Program%20Files/Git/devSolutionTask/dashboard": {}
+    "/": {},
+    "/dashboard": {}
   }
 }
