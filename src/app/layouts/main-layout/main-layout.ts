@@ -29,7 +29,6 @@ export class MainLayout {
         // Restore scroll when navigating (mobile fix)
         if (this.isSmallScreen) {
           this.isSidebarVisible = false;
-          this.toggleBodyScroll(false);
         }
       }
     });
@@ -59,38 +58,5 @@ export class MainLayout {
 
   toggleSidebar() {
     this.isSidebarVisible = !this.isSidebarVisible;
-    // Only show overlay for small screens
-    if (this.isSmallScreen) {
-      this.toggleBodyScroll(this.isSidebarVisible);
-    }
-  }
-
-  private scrollPosition = 0;
-
-  toggleBodyScroll(disable: boolean): void {
-    if (!this.isBrowser) return;
-
-    if (disable) {
-      // Store current scroll position
-      this.scrollPosition = window.scrollY || document.documentElement.scrollTop;
-
-      // Freeze the body
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${this.scrollPosition}px`;
-      document.body.style.left = '0';
-      document.body.style.right = '0';
-      document.body.style.width = '100%';
-      document.body.style.overflow = 'hidden';
-    } else {
-      // Restore scroll
-      const scrollY = this.scrollPosition;
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.left = '';
-      document.body.style.right = '';
-      document.body.style.width = '';
-      document.body.style.overflow = '';
-      window.scrollTo(0, scrollY);
-    }
   }
 }

@@ -29,4 +29,10 @@
       }
     </tbody>
   </table>
+  <!-- Pagination -->
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="page() === 1">‹ Prev</button>
+    <span class="page-info">Page {{ page() }}</span>
+    <button (click)="nextPage()" [disabled]="!hasNext()">Next ›</button>
+  </div>
 </div>

@@ -128,7 +128,8 @@
     font-weight: 600;
 
     /* Responsive widths */
-    width: 100px;
+    width: 150px;
+    @media (max-width: 1000px) { width: 100px; }
     @media (max-width: 600px) { width: 90px; }
     @media (max-width: 500px) { width: 70px; }
     @media (max-width: 400px) { width: 40px; }

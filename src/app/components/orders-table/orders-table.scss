@@ -130,3 +130,34 @@
     padding: 4px 10px;
   }
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+
+  .page-info {
+    font-size: 12px;
+    color: #057ea7;
+  }
+
+  button {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: none;
+    background: #F0F2F5;
+    font-size: 12px;
+    cursor: pointer;
+
+    &:hover {
+      background: #E2E6EA;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
