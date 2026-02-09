@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 
+
 @Component({
   selector: 'app-line-chart',
   standalone: true,
@@ -9,8 +10,7 @@ import { BaseChartDirective } from 'ng2-charts';
   styleUrls: ['./line-chart.scss'],
 })
 export class LineChart {
-
-  data = {
+data = {
     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     datasets: [
       {
@@ -20,22 +20,20 @@ export class LineChart {
         fill: true,
         tension: 0.4,
         pointRadius: 4,
-      }
-    ]
+      },
+    ],
   };
 
   options = {
     responsive: true,
-    plugins: {
-      legend: { display: false }
-    },
+    plugins: { legend: { display: false } },
     scales: {
       x: { grid: { display: false } },
       y: {
         ticks: {
-          callback: (v: number) => `$${v}`
-        }
-      }
-    }
+          callback: (v: number) => `$${v}`,
+        },
+      },
+    },
   };
 }

@@ -5,9 +5,16 @@
   margin-top: 20px;
   width: 100%;
 
+  /* Add horizontal scrolling for small screens */
+  @media (max-width: 700px) {
+    padding: 10px;
+    overflow-x: auto;  /* enable horizontal scroll */
+  }
+
   table {
     border-collapse: collapse;
     width: 100%;
+    min-width: 600px; /* ensure table doesn't shrink too much */
   }
 
   th, td {
@@ -46,6 +53,17 @@
 
 .order-name {
   align-items: center;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 150px;
+  @media (max-width: 700px) {
+    width: 100px;
+  }
+  @media (max-width: 500px) {
+    width: 80px;
+  }
 }
 
 .status {
@@ -73,4 +91,34 @@
 .blue-status {
   color: #0561FC;
   background-color: #DFF0FF;
+}
+
+/* Responsive tweaks for very small screens */
+@media (max-width: 700px) {
+  .orders-table {
+    th, td {
+      padding: 10px;
+    }
+
+    th {
+      font-size: 10px;
+    }
+
+    td {
+      font-size: 10px;
+    }
+
+    .date-entity {
+      font-size: 10px;
+    }
+
+    table {
+      min-width: 500px; /* or whatever fits your columns */
+    }
+  }
+
+  .status {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
 }

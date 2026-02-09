@@ -1,10 +1,18 @@
 <div class="layout">
-  <app-sidebar></app-sidebar>
+  <app-sidebar
+    [class.visible]="isSidebarVisible"
+    (isSidebarClicked)="toggleSidebar()">
+  </app-sidebar>
 
   <div class="main">
-    <app-header></app-header>
+    <app-header (toggleSidebar)="toggleSidebar()"></app-header>
     <div class="content">
       <router-outlet></router-outlet>
     </div>
   </div>
+
+  <!-- Overlay when sidebar is open on mobile -->
+  @if (isSidebarVisible && isSmallScreen) {
+    <div class="overlay" (click)="toggleSidebar()"></div>
+  }
 </div>

@@ -1,13 +1,19 @@
-.sidebar {
-  background: #ffffff;
-  padding: 25px;
-  width: 260px;
-  height: 100vh;
-  flex-shrink: 0;
+.sidebar{
+  height: 100dvh;
+  width:260px;
+  background:#fff;
+  overflow-y:auto;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column;   // stack items vertically
+  justify-content: space-between; // push last item to bottom
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  @media (max-width: 350px) { width:180px; }
 }
-
 
 .logo-section {
   display: flex;

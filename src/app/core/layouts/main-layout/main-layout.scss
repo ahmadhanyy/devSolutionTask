@@ -2,8 +2,8 @@
   display: flex;
   height: 100vh;
   background: #f9fafb;
+  position: relative; // needed for overlay
 }
-
 
 .main {
   flex: 1;
@@ -16,4 +16,48 @@
   flex: 1;
   padding: 0px 24px;
   overflow-y: auto;
+}
+
+/* Sidebar default */
+app-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
+  transition: transform 0.3s ease;
+  @media (max-width: 350px) { width:180px; }
+}
+
+/* Mobile overlay style */
+@media (max-width: 1000px) {
+  app-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%); // hidden by default
+    z-index: 1000;
+  }
+
+  app-sidebar.visible {
+    transform: translateX(0); // slide in
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 900; // behind sidebar
+  }
+}
+
+/* Prevent background scroll when overlay is active */
+body.no-scroll,
+html.no-scroll {
+  overflow: hidden !important;
+  height: 100%;
+  overscroll-behavior: none;
 }

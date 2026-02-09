@@ -1,4 +1,7 @@
 <header class="header">
+  <button class="menu-toggle" (click)="toggleSidebar.emit()">
+    <i class="fa-solid fa-bars"></i>
+  </button>
   <div class="input-container">
     <i class="fa-solid fa-magnifying-glass" style="color: #BCC4C8;"></i>
     <input placeholder="Search" />
@@ -10,9 +13,9 @@
     <div class="icon-box clickable">
       <i class="fa-solid fa-bell" style="color: #9DACB4;"></i>
     </div>
-    <div class="icon-box">
+    <div class="icon-box user-icon">
       <img src="user-icon.svg" alt="avatar" />
     </div>
-    <div class="user">Johny Larsen <span><i class="fa-solid fa-chevron-down"></i></span></div>
+    <div class="user"><span class="username">Johny Larsen sssssssssssssssssssssssssss</span> <span><i class="fa-solid fa-chevron-down"></i></span></div>
   </div>
 </header>

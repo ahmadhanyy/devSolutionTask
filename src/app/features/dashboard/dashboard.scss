@@ -22,27 +22,73 @@
 .analytics {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, max-content));
+  @media (max-width: 610px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .charts {
   display: flex;
   flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.graph-card {
-  margin: 10px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 17px;
+.chart-label{
+  margin: 0px 0px 10px 0px;
+  font-size: larger;
+  font-weight: 800;
 }
 
-.line {
-  width: 60%;
+@media (max-width: 810px) {
+  .charts {
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-.bar {
-  width: 40%;
+.chart-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  position: relative;
+  height: 100%;
+
+  // Make canvas responsive
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+
+    canvas {
+      max-height: 300px; // reduce height on mobile
+    }
+  }
+
+  @media (max-width: 480px) {
+    canvas {
+      max-height: 240px;
+      max-width: 300px;
+    }
+  }
+}
+
+.chart-card .line {
+  width: 500px;
+}
+
+.chart-card .bar {
+  width: 300px;
 }
 
 .section-header {

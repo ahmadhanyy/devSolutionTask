@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterLinkActive } from "@angular/router";
 import { RouterModule } from '@angular/router';
 
@@ -10,5 +10,9 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./sidebar.scss'],
 })
 export class Sidebar {
+  @Output() isSidebarClicked = new EventEmitter<void>();
 
+  toggleSidebar(){
+    this.isSidebarClicked.emit();
+  }
 }

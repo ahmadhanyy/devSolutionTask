@@ -6,17 +6,59 @@
   align-items: center;
   justify-content: space-between;
 
+  .menu-toggle {
+    background: none;
+    margin-right: 5px;
+    border: none;
+    cursor: pointer;
+    display: none;
+    @media (max-width: 1000px) {
+        display: block;
+        z-index: 999;
+      }
+    }
+
+  .menu-toggle i {
+    font-size: x-large;
+    color: rgb(0, 0, 0);
+    @media (max-width: 800px) {
+      font-size: large;
+    }
+  }
+
   .input-container {
     display: flex;
     align-items: center;
-    margin-left: 20px;
     gap: 8px;
     width: 520px;
     height: 35px;
     border: 0px;
     border-radius: 8px;
     padding: 6px 12px;
+    margin-right: 10px;
     background-color: #F8FAFB;
+    @media (max-width: 1150px) {
+      width: 400px;
+    }
+    @media (max-width: 800px) {
+      width: 320px;
+    }
+    @media (max-width: 700px) {
+      width: 220px;
+    }
+    @media (max-width: 600px) {
+      width: 160px;
+      gap: 3px;
+      ::placeholder {
+        font-size: 12px;
+      }
+      .fa-magnifying-glass{
+        font-size: 12px;
+      }
+    }
+    @media (max-width: 530px) {
+      width: 100px;
+    }
   }
 
   .fa-magnifying-glass{
@@ -72,14 +114,53 @@
   }
 
   .user {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    max-width: 200px; /* max width for the whole user section */
+  }
+
+  .username {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-weight: 600;
-    &:hover {
-      cursor: pointer;
-    }
+
+    /* Responsive widths */
+    width: 100px;
+    @media (max-width: 600px) { width: 90px; }
+    @media (max-width: 500px) { width: 70px; }
+    @media (max-width: 400px) { width: 40px; }
   }
 
   .fa-chevron-down{
     font-size: 10px;
     margin-left: 5px;
+  }
+}
+
+@media (max-width: 460px) {
+  .header {
+    padding: 0 14px;
+  }
+
+  .header .user-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 330px) {
+  .header .icon-wrapper {
+    gap: 8px;
+  }
+
+  .header .icon-box {
+    width: 30px;
+    height: 30px;
+  }
+
+  .header .fa-solid{
+    font-size: 14px;
   }
 }
