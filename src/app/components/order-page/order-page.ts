@@ -12,7 +12,7 @@ import { Order } from '../../models/order';
 })
 export class OrderPage implements OnInit {
 
-  orders = signal<Order[]>([]);
+  ordersList = signal<Order[]>([]);
   page = signal(1);
   limit = 6;
   hasNext = signal(true);
@@ -28,10 +28,30 @@ export class OrderPage implements OnInit {
 
     this.orderService.getOrders(offset, this.limit).subscribe({
       next: (res) => {
-        this.orders.set(res);
-        this.hasNext.set(res.length === this.limit);
+        if (res.length == 0){
+          let orders: Order[] = [
+            {id: 1, images: [''], title: 'Iphone 13', description: 'Iphone 13 for limited time', price: 799, creationAt: new Date("2025-07-04")},
+            {id: 2, images: [''], title: 'Iphone 14', description: 'Iphone 14 for limited time', price: 899, creationAt: new Date("2025-08-04")},
+            {id: 3, images: [''], title: 'Iphone 15', description: 'Iphone 15 for limited time', price: 999, creationAt: new Date("2025-09-04")},
+          ]
+          this.ordersList.set(orders);
+          this.hasNext.set(false);
+        }
+        else {
+          this.ordersList.set(res);
+          this.hasNext.set(res.length === this.limit);
+        }
       },
-      error: (err) => console.error(err),
+      error: (err) => {
+        console.error(err)
+        let orders: Order[] = [
+          {id: 1, images: [''], title: 'Iphone 13', description: 'Iphone 13 for limited time', price: 799, creationAt: new Date("2025-07-04")},
+          {id: 2, images: [''], title: 'Iphone 14', description: 'Iphone 14 for limited time', price: 899, creationAt: new Date("2025-08-04")},
+          {id: 3, images: [''], title: 'Iphone 15', description: 'Iphone 15 for limited time', price: 999, creationAt: new Date("2025-09-04")},
+        ]
+        this.ordersList.set(orders);
+        this.hasNext.set(false);
+      },
     });
   }
 

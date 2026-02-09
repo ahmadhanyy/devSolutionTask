@@ -4,7 +4,7 @@
     <p>All recent customer orders</p>
   </div>
   <div class="orders-list">
-    @for (order of orders(); track $index) {
+    @for (order of ordersList(); track $index) {
       <div class="order-item">
 
         <img class="order-img" [src]="order.images[0]" />

@@ -1,5 +1,5 @@
 .dashboard {
-  padding: 20px 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -10,20 +10,24 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  margin: 20px 0px;
+  margin: 20px 0;
 }
 
 .section-title {
   font-size: 16px;
   font-weight: 600;
-  margin: 0px;
+  margin: 0;
 }
 
 .analytics {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, max-content));
-  @media (max-width: 610px) {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 610px) {
+  .analytics {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,64 +35,52 @@
   }
 }
 
-.charts {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.chart-label{
-  margin: 0px 0px 10px 0px;
+.chart-label {
+  margin: 0 0 10px 0;
   font-size: larger;
   font-weight: 800;
 }
 
+.charts {
+  display: grid;
+  grid-template-columns: auto auto; /* each chart only takes its own width */
+  gap: 20px;
+  width: 100%; /* grid container still full width */
+  justify-content: start; /* align charts to the left, leaving remaining space empty */
+}
+
 @media (max-width: 810px) {
   .charts {
-    flex-direction: column;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: 1fr; /* stack vertically */
+    justify-items: center;      /* center the charts */
   }
 }
 
 .chart-card {
   background: #fff;
-  padding: 25px;
+  padding: 20px;
   border-radius: 14px;
-  position: relative;
-  height: 100%;
-
-  // Make canvas responsive
-  canvas {
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  @media (max-width: 768px) {
-    padding: 15px;
-
-    canvas {
-      max-height: 300px; // reduce height on mobile
-    }
-  }
-
-  @media (max-width: 480px) {
-    canvas {
-      max-height: 240px;
-      max-width: 300px;
-    }
-  }
+  width: clamp(260px, 90%, 500px);      /* responsive width */
+  height: clamp(200px, 35vw, 340px);    /* responsive height */
+  display: flex;
+  flex-direction: column;
 }
 
-.chart-card .line {
-  width: 500px;
+.chart-card.line {
+  width: clamp(300px, 50%, 550px);
 }
 
-.chart-card .bar {
-  width: 300px;
+.chart-card.bar {
+  width: clamp(220px, 40%, 350px);
+}
+
+
+.chart-card app-line-chart,
+.chart-card app-bar-chart,
+.chart-card canvas {
+  flex: 1;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .section-header {
@@ -105,4 +97,19 @@
   gap: 5px;
   font-size: 12px;
   color: #ACB7BD;
+}
+
+@media (max-width: 400px) {
+  .chart-card {
+    width: clamp(180px, 85%, 260px);
+    height: clamp(150px, 30vw, 220px);
+  }
+
+  .chart-card.line {
+    width: clamp(200px, 90%, 280px);
+  }
+
+  .chart-card.bar {
+    width: clamp(160px, 80%, 220px);
+  }
 }

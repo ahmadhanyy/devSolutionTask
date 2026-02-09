@@ -15,15 +15,13 @@
   @media (max-width: 350px) { width:180px; }
 }
 
-.logo-section img, .logo-section span {
-  cursor: pointer;
-}
-
 .logo-section {
   display: flex;
   align-items: center;
   gap: 5px;
   margin-bottom: 24px;
+  cursor: pointer;
+  width:min-content;
 
   .logo {
     width: 32px;
