@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { AnalyticsData } from './../../core/models/analytics';
+import { AnalyticsData } from '../../models/analytics';
 
 @Component({
   selector: 'app-analytics-card',

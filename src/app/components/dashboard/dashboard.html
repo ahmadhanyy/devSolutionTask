@@ -2,7 +2,7 @@
   <section>
     <p class="section-title">Analytics</p>
     <div class="analytics">
-      @for (data of analytics; track $index) {
+      @for (data of analyticsList(); track $index) {
         <app-analytics-card [data]="data"></app-analytics-card>
       }
     </div>

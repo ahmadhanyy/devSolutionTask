@@ -6,7 +6,7 @@ It leverages:
 - **Standalone components**.
 - **Zoneless change detection**.
 - **NgRX** for state management and API handling.
-- **Feature-first architecture** for clean and scalable project structure.
+- **Linear MVVM Architecture** for clean and scalable project structure.
 
 The project was generated using [Angular CLI](https://github.com/angular/angular-cli) **v20.3.1**.
 
@@ -68,9 +68,9 @@ The application will automatically reload whenever you modify any of the source 
 
 ## Project Structure
 
-The project follows a feature-first architecture, which helps in:
+The project follows a Linear MVVM architecture, which helps in:
 - Better scalability.
 - Easier maintenance.
 - Clear separation of concerns.
 
-Each feature contains its own components, state management, services, and related files.
+There is separate folder for components, services, models, routes and layouts.

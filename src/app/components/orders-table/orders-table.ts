@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Order, OrderStatus } from './../../core/models/order';
+import { Order, OrderStatus } from '../../models/order';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 
 
