@@ -12,7 +12,7 @@ export class OrderService {
 
   constructor(private http: HttpClient) {}
 
-  getProducts(offset: number = 0, limit: number = 10): Observable<Order[]> {
+  getOrders(offset: number = 0, limit: number = 10): Observable<Order[]> {
     return this.http.get<Order[]>(
       `${this.baseUrl}?offset=${offset}&limit=${limit}`
     );

@@ -19,13 +19,11 @@ export class Dashboard implements OnInit  {
   constructor(private analyyicsServ: AnalyticsService){}
 
   ngOnInit() {
-    this.analyyicsServ.getAnalytics().subscribe(
-      (res: any) => {
+    this.analyyicsServ.getAnalytics().subscribe({
+      next: (res) => {
         this.analyticsList.set(res);
       },
-      (error) => {
-        console.error(error)
-      }
-    );
+      error: (err) => console.error(err),
+    });
   }
 }

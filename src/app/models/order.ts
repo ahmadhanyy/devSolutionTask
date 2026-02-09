@@ -1,17 +1,14 @@
 export interface Order {
-  imgUrl: string;
-  name: string;
-  quantity: number;
-  orderDate: Date;
-  amount: number;
-  status: OrderStatus;
+  id: number;
+  images: string[];
+  title: string;
+  description: string;
+  price: number;
+  creationAt: Date;
 }
 
 export enum OrderStatus {
   Pending = 'Pending',
-  Delivered = 'Delivered',
   Approved = 'Approved',
-  Rejected = 'Rejected',
-  Cancelled = 'Cancelled',
   InProcess = 'In Process',
 }

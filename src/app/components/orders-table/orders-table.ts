@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { Order, OrderStatus } from '../../models/order';
 import { CurrencyPipe, DatePipe } from '@angular/common';
-
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-orders-table',
@@ -10,33 +10,20 @@ import { CurrencyPipe, DatePipe } from '@angular/common';
   templateUrl: './orders-table.html',
   styleUrls: ['./orders-table.scss'],
 })
-export class OrdersTable {
+export class OrdersTable implements OnInit {
   orderStatus = OrderStatus;
-  orders: Order[] = [
-  {
-    imgUrl: 'iphone.png',
-    name: 'IPhone 13',
-    quantity: 1,
-    orderDate: new Date('2022-01-20'),
-    amount: 799,
-    status: OrderStatus.Pending
-  },
-  {
-    imgUrl: 'xaomi.png',
-    name: 'Xiaomi Redmi Note 10',
-    quantity: 1,
-    orderDate: new Date('2022-01-20'),
-    amount: 799,
-    status: OrderStatus.Approved
-  },
-  {
-    imgUrl: 'iphone.png',
-    name: 'IPhone 13',
-    quantity: 1,
-    orderDate: new Date('2022-01-20'),
-    amount: 799,
-    status: OrderStatus.InProcess
-  },
-  ]
+  ordersList = signal<Order[]>([]);
+
+  constructor(private orderServ: OrderService){}
+
+  ngOnInit() {
+    this.orderServ.getOrders().subscribe({
+      next: (res) => {
+        console.log('orders: ', res)
+        this.ordersList.set(res)
+      },
+      error: (err) => console.error(err),
+    });
+  }
 
 }
