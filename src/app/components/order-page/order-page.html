@@ -1,0 +1,33 @@
+<div class="orders-page">
+  <div class="page-header">
+    <h2>Orders</h2>
+    <p>All recent customer orders</p>
+  </div>
+  <div class="orders-list">
+    @for (order of orders(); track $index) {
+      <div class="order-item">
+
+        <img class="order-img" [src]="order.images[0]" />
+
+        <div class="order-info">
+          <h4 class="order-title">{{ order.title }}</h4>
+          <p class="order-desc">{{ order.description }}</p>
+
+          <div class="meta">
+            <span>{{ order.creationAt | date:'mediumDate' }}</span>
+            <span class="price">{{ order.price | currency:'USD' }}</span>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="page() === 1">‹ Prev</button>
+    <span class="page-info">Page {{ page() }}</span>
+    <button (click)="nextPage()" [disabled]="!hasNext()">Next ›</button>
+  </div>
+
+</div>
+

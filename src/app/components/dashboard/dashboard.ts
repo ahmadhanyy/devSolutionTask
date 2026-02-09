@@ -5,11 +5,12 @@ import { LineChart } from '../line-chart/line-chart';
 import { BarChart } from '../bar-chart/bar-chart';
 import { OrdersTable } from '../orders-table/orders-table';
 import { AnalyticsService } from '../../services/analytics.service'
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [AnalyticsCard, LineChart, BarChart, OrdersTable],
+  imports: [AnalyticsCard, LineChart, BarChart, OrdersTable, RouterLink],
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.scss'],
 })
